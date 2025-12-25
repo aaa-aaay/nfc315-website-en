@@ -1,0 +1,99 @@
+import router from "@/router";
+import dayjs from 'dayjs'
+/**
+ * Check if an element has a class
+ * @param {HTMLElement} ele
+ * @param {string} cls
+ * @returns {boolean}
+ */
+export function hasClass(ele: HTMLElement, cls: string) {
+  return !!ele.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)"));
+}
+
+/**
+ * Add class to element
+ * @param {HTMLElement} ele
+ * @param {string} cls
+ */
+export function addClass(ele: HTMLElement, cls: string) {
+  if (!hasClass(ele, cls)) ele.className += " " + cls;
+}
+
+/**
+ * Remove class from element
+ * @param {HTMLElement} ele
+ * @param {string} cls
+ */
+export function removeClass(ele: HTMLElement, cls: string) {
+  if (hasClass(ele, cls)) {
+    const reg = new RegExp("(\\s|^)" + cls + "(\\s|$)");
+    ele.className = ele.className.replace(reg, " ");
+  }
+}
+
+/**
+ * 判断是否是外部链接
+ *
+ * @param {string} path
+ * @returns {Boolean}
+ */
+export function isExternal(path: string) {
+  const isExternal = /^(https?:|http?:|mailto:|tel:)/.test(path);
+  return isExternal;
+}
+
+/**
+ * 格式化增长率，保留两位小数 ，并且去掉末尾的0  取绝对值
+ *
+ * @param growthRate
+ * @returns
+ */
+export function formatGrowthRate(growthRate: number) {
+  if (growthRate === 0) {
+    return "-";
+  }
+
+  const formattedRate = Math.abs(growthRate * 100)
+    .toFixed(2)
+    .replace(/\.?0+$/, "");
+  return formattedRate + "%";
+}
+
+export function formatCurrency(value: number) {
+  if (typeof value !== 'number') {
+    return value;
+  }
+
+  return  value.toFixed(2);
+}
+
+export function formattedDateTime(value: string) {
+
+  return dayjs(value)
+    .format('MMMM DD, YYYY hh:mmA') // 格式化为 "July 07, 2025 05:17PM"
+}
+
+export function formattedDate(value: string) {
+
+  return dayjs(value)
+    .format('MMMM DD, YYYY ') // 格式化为 "July 07, 2025 05:17PM"
+}
+
+export function needAuthLogin() {
+  ElMessageBox.confirm(
+    'Please log in first.',
+    'Warning',
+    {
+      confirmButtonText: 'Login',
+      cancelButtonText: 'Cancel',
+      type: 'warning',
+    }
+  )
+    .then(() => {
+        router.push("/ulink_comshop/pages/user/login")
+    })
+    .catch(() => {
+      router.push("/ulink_comshop/pages/index/index")
+    })
+}
+

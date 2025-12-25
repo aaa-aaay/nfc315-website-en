@@ -1,0 +1,164 @@
+import defaultSettings from "@/settings";
+
+// 导入 Element Plus 中英文语言包
+import zhCn from "element-plus/es/locale/lang/zh-cn";
+import en from "element-plus/es/locale/lang/en";
+import { store } from "@/store";
+import { DeviceEnum } from "@/enums/settings/device.enum";
+import { SidebarStatus } from "@/enums/settings/layout.enum";
+import CartAPI from "@/api/cart.api";
+
+export const useAppStore = defineStore("app", () => {
+  // 设备类型
+  const device = useStorage("device", DeviceEnum.DESKTOP);
+  // 布局大小
+  const size = useStorage("size", defaultSettings.size);
+  // 语言
+  const language = useStorage("language", defaultSettings.language);
+  // 侧边栏状态
+  const sidebarStatus = useStorage("sidebarStatus", SidebarStatus.CLOSED);
+  const sidebar = reactive({
+    opened: sidebarStatus.value === SidebarStatus.OPENED,
+    withoutAnimation: false,
+  });
+
+  // 语言
+  const latitude = useStorage("latitude", "0");
+
+  const longitude = useStorage("longitude", "0");
+
+  const notice = useStorage<string[]>('notice', []);
+
+  // 顶部菜单激活路径
+  const activeTopMenuPath = useStorage("activeTopMenuPath", "");
+  const shareId = useStorage("share_id", "");
+  /**
+   * 根据语言标识读取对应的语言包
+   */
+  const locale = computed(() => {
+    if (language?.value == "zh-cn") {
+      return zhCn;
+    } else {
+      return en;
+    }
+  });
+
+  // 切换侧边栏
+  function toggleSidebar() {
+    sidebar.opened = !sidebar.opened;
+    sidebarStatus.value = sidebar.opened ? SidebarStatus.OPENED : SidebarStatus.CLOSED;
+  }
+
+  // 关闭侧边栏
+  function closeSideBar() {
+    sidebar.opened = false;
+    sidebarStatus.value = SidebarStatus.CLOSED;
+  }
+
+  // 打开侧边栏
+  function openSideBar() {
+    sidebar.opened = true;
+    sidebarStatus.value = SidebarStatus.OPENED;
+  }
+
+  // 切换设备
+  function toggleDevice(val: string) {
+    device.value = val;
+  }
+
+
+  /**
+   * 改变布局大小
+   *
+   * @param val 布局大小 default | small | large
+   */
+  function changeSize(val: string) {
+    size.value = val;
+  }
+
+  function changeNotice(val) {
+    notice.value.splice(0, notice.value.length);
+    notice.value.push(...val)
+
+  }
+
+  /**
+   * 切换语言
+   *
+   * @param val
+   */
+  function changeLanguage(val: string) {
+    language.value = val;
+  }
+  function changeShareId(val: string) {
+    shareId.value = val;
+  }
+
+  function changeLatitude(val: string) {
+    latitude.value = val;
+  }
+
+  function changeLongitude(val: string) {
+    longitude.value = val;
+  }
+
+  function getCurrentPosition() {
+    return new Promise<void>((resolve, reject) => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          let latitude = position.coords.latitude;
+          let longitude = position.coords.longitude;
+          changeLongitude(longitude);
+          changeLatitude(latitude);
+          resolve([latitude,longitude]);
+        }, error => {
+          console.error("Error getting location:", error);
+          reject(error);
+        });
+      } else {
+        reject("Geolocation is not supported by this browser.");
+        console.error("Geolocation is not supported by this browser.");
+      }
+    });
+  }
+
+  /**
+   * 混合模式顶部切换
+   */
+  function activeTopMenu(val: string) {
+    activeTopMenuPath.value = val;
+  }
+  return {
+    device,
+    sidebar,
+    language,
+    locale,
+    size,
+    activeTopMenu,
+    toggleDevice,
+    changeSize,
+    changeLanguage,
+    toggleSidebar,
+    closeSideBar,
+    openSideBar,
+    activeTopMenuPath,
+    notice,
+    changeNotice,
+    shareId,
+    changeShareId,
+    latitude,
+    longitude,
+    changeLatitude,
+    changeLongitude,
+    getCurrentPosition
+  };
+});
+
+/**
+ * 用于在组件外部（如在Pinia Store 中）使用 Pinia 提供的 store 实例。
+ * 官方文档解释了如何在组件外部使用 Pinia Store：
+ * https://pinia.vuejs.org/core-concepts/outside-component-usage.html#using-a-store-outside-of-a-component
+ */
+export function useAppStoreHook() {
+  return useAppStore(store);
+}
