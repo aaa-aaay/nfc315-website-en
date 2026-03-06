@@ -36,7 +36,7 @@ pnpm run dev
 
 ## 项目部署
 
-执行 `pnpm run build` 命令后，项目将被打包并生成 `dist` 目录。接下来，将 `dist` 目录下的文件上传到服务器 `/usr/apache-tomcat-7.0.85/webapps/ROOT` 目录下，并配置 Nginx 进行反向代理。
+执行 `pnpm run build` 命令后，项目将被打包并生成 `dist` 目录。接下来，将 `dist` 目录下的文件上传到服务器 `/www/wwwroot/www.nfc315.com` 目录下，并配置 Nginx 进行反向代理。
 
 ```bash
 pnpm run build

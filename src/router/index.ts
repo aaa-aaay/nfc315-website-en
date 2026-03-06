@@ -22,9 +22,9 @@ export const constantRoutes: RouteRecordRaw[] = [
         meta: { title:'Contact us', hidden: true },
       },
       {
-        path: "/about_us.html",
-        component: () => import("@/views/about-us/index.vue"),
-        meta: { title:'About Us', hidden: true },
+        path: "/solutions.html",
+        component: () => import("@/views/solutions/index.vue"),
+        meta: { title:'Solutions', hidden: true },
       },
       {
         path: "/blog.html",

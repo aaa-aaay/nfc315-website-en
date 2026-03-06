@@ -9,11 +9,15 @@
     <div class="container">
       <div class="row row-30 align-items-center justify-content-center">
         <div class="col-xs-10 col-sm-5">
-          <h6>A Few Words About Us</h6>
-          <h1>Leading IT industry event</h1>
-          <p>Founded in 1999, OpenWeb Conference is a place where innovative minds meet.</p>
+          <h1>NFC315 DPP Platform</h1>
+          <p>NFC315 uses QR codes or NFC tags to connect physical products with thier digital indentities</p>
+          <ul class="list list-marked-arrow">
+            <li class="list-item">Item level traceability from material to recycling.</li>
+            <li class="list-item">A cost optimized solution for ESPR compliance.</li>
+            <li class="list-item">No App required, works with any NFC-enabled smartphone.</li>
+          </ul>
         </div>
-        <div class="col-xs-10 col-sm-7"><img src="@/assets/images/image-04-730x730.jpg" alt="" width="730" height="730"/>
+        <div class="col-xs-10 col-sm-7"><img src="@/assets/images/Solutions_IMG1.jpeg" alt="" width="730" height="730"/>
         </div>
       </div>
     </div>
@@ -22,17 +26,52 @@
   <section class="section section-md bg-transparent" data-preset='{"title":"Intro","category":"intro","reload":false,"id":"intro-4"}'>
     <div class="container">
       <div class="row row-30 align-items-center justify-content-center">
-        <div class="col-xs-10 col-sm-7 d-none d-sm-block"><img src="@/assets/images/image-05-730x730.jpg" alt="" width="730" height="730"/>
+        <div class="col-xs-10 col-sm-7 d-none d-sm-block"><img src="@/assets/images/Solutions_IMG2.jpeg" alt="" width="730" height="730"/>
         </div>
         <div class="col-xs-10 col-sm-5">
-          <h6>Why choose OpenWeb</h6>
-          <h1>Advantages of our event</h1>
+          <h1>The Textile DPP aims to:</h1>
           <ul class="list list-marked-arrow">
-            <li class="list-item">Interdum laoreet</li>
-            <li class="list-item">Scelerisque eros</li>
-            <li class="list-item">Aliquam</li>
-            <li class="list-item">Interdum laoreet</li>
-            <li class="list-item">Scelerisque eros</li>
+            <li class="list-item">Enhanced transparency throughout the entire value chain.</li>
+            <li class="list-item">Streamlined and reduced consumption of raw materials.</li>
+            <li class="list-item">Boosted creation of durable products.</li>
+            <li class="list-item">Minimised waste generation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Intro-->
+  <section class="section section-md bg-transparent" data-preset='{"title":"Intro","category":"intro","reload":false,"id":"intro-4"}'>
+    <div class="container">
+      <div class="row row-30 align-items-center justify-content-center">
+        <div class="col-xs-10 col-sm-5">
+          <h1>Asset Management System</h1>
+          <p>Four core objectives combining RFID technology with financial asset management reuirements</p>
+          <ul class="list list-marked-arrow">
+            <li class="list-item">Establish consistent ledger-card-physical asset management system.</li>
+            <li class="list-item">Achieve real-time, efficient, traceable asset inventory.</li>
+            <li class="list-item">Improve financial data accuracy in depreciation, repair and disposal.</li>
+            <li class="list-item">Reduce huamn resource and error costs.</li>
+          </ul>
+        </div>
+        <div class="col-xs-10 col-sm-7"><img src="@/assets/images/Solutions_IMG3.jpg" alt="" width="730" height="730"/>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Intro-->
+  <section class="section section-md bg-transparent" data-preset='{"title":"Intro","category":"intro","reload":false,"id":"intro-4"}'>
+    <div class="container">
+      <div class="row row-30 align-items-center justify-content-center">
+        <div class="col-xs-10 col-sm-7 d-none d-sm-block"><img src="@/assets/images/solution_IMG4.jpg" alt="" width="730" height="730"/>
+        </div>
+        <div class="col-xs-10 col-sm-5">
+          <h1>Warehouse Management System</h1>
+          <ul class="list list-marked-arrow">
+            <li class="list-item">Identifies and monitors each individual product precisely.</li>
+            <li class="list-item">Speeds up scanning without manual alignment or line-of-sight.</li>
+            <li class="list-item">Provides real-time updates across RFID and NFC readers.</li>
+            <li class="list-item">Integrates seamlessly into picking, packing, and shipping tasks.</li>
           </ul>
         </div>
       </div>

@@ -50,7 +50,7 @@
           </div>
         </div>
         <!-- Copyright-->
-        <p class="rights"><span>&copy; 2025&nbsp;</span><span>. All rights reserved</span> <a target="_blank" href="https://www.mobanwang.com/" title="网站模板">网站模板</a></p>
+        <p class="rights"><span>&copy; 2025&nbsp;</span><span>. All rights reserved</span> <a target="_blank" href="https://www.mobanwang.com/" title="Company Name">Blackey Singapore pte. ltd. </a></p>
       </div>
     </div>
   </footer>

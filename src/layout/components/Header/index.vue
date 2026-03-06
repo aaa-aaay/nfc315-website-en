@@ -26,8 +26,8 @@
             title:'Home'
           },
           {
-            path:'/about_us.html',
-            title:'About Us'
+            path:'/solutions.html',
+            title:'Solutions'
           },
 
           {
