@@ -35,9 +35,14 @@
             title:'Blog'
           },
           {
+            path:'/events.html', 
+            title:'Events' 
+          } ,
+          {
             path:'/contact_us.html',
             title:'Contact us'
           }
+
         ]
       };
     }

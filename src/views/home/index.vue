@@ -131,14 +131,14 @@
         </div>
         <div class="col-md-10 col-lg-8" data-lightgallery data-animate='{"class":"fadeIn"}'>
           <!-- Video-->
-          <article class="video lightgallery-item" data-html="#0sduc5rj38p"><img class="video-image" src="@/assets/images/image-02-840x473.jpg" alt="" width="840" height="473"/>
+          <article class="video lightgallery-item" data-html="#0sduc5rj38p"><img class="video-image" src="@/assets/images/bg-video2-tumbnail.png" alt="" width="840" height="473"/>
             <div class="video-link">
               <div class="icon icon-circle icon-sm video-icon fa-play novi-icon"></div>
             </div>
           </article>
           <div class="d-none" id="0sduc5rj38p">
             <video class="lg-video-object lg-html5" controls="" preload="none">
-              <source src="@/assets/video/bg-video.mp4" type="video/mp4">Your browser does not support HTML5 video.
+              <source src="@/assets/video/bg-video2.mp4" type="video/mp4">Your browser does not support HTML5 video.
             </video>
           </div>
         </div>

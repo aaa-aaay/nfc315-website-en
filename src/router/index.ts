@@ -32,6 +32,11 @@ export const constantRoutes: RouteRecordRaw[] = [
         meta: { title:'Blog', hidden: true },
       },
       {
+        path: "/events.html",
+        component: () => import("@/views/Events/index.vue"),
+        meta: { title:'Events', hidden: true },
+      },
+      {
         path: "/starter.html",
         component: () => import("@/views/starter/index.vue"),
         meta: { title:'Starter', hidden: true },
