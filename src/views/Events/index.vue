@@ -23,7 +23,7 @@ function getEventList() {
 
     if (res.code == 200) {
       listRef.value.total = res.body.page.count; 
-      listRef.value.records = res.body.page.data;
+      listRef.value.records = res.body.page.data; 
 
       setTimeout(() => {
         loading.value = false;
@@ -42,6 +42,31 @@ function getEventList() {
 const handlePagination = () => {
   getEventList();
 };
+
+
+
+  const formatDate = (dateStr) => {
+    if (!dateStr) return '';
+
+    // 1. 提取日期部分（忽略时间）：截取前 10 位（YYYY-MM-DD）
+    const datePart = dateStr.slice(0, 10);
+
+    // 2. 校验日期格式（YYYY-MM-DD）
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(datePart)) return '无效日期';
+
+    // 3. 解析年、月、日（月份是 0 开始，需减 1）
+    const [year, month, day] = datePart.split('-').map(Number);
+
+    // 4. 英文完整月份映射
+    const monthNames = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+
+    // 5. 拼接格式（日期不带前导零，直接用 day 即可）
+    return `${monthNames[month - 1]} ${day}, ${year}`;
+  };
+
 </script>
 
 
@@ -66,13 +91,13 @@ const handlePagination = () => {
             <div class="post">
 
               <!-- Event image -->
-              <router-link class="post-img-link" :to="`/single-post.html/${item.id}`">
+              <router-link class="post-img-link" :to="`events-single-post.html/${item.id}`">
                 <img :src="item.item_pic_url" alt="" width="570" height="366"/>
               </router-link>
 
               <!-- Event title -->
               <h3 class="post-title">
-                <router-link :to="`/single-post.html/${item.id}`">{{ item.title }}</router-link>
+                <router-link :to="`events-single-post.html/${item.id}`">{{ item.title }}</router-link>
               </h3>
 
               <!-- Event subtitle -->
@@ -83,13 +108,13 @@ const handlePagination = () => {
               <!-- Event meta: location and time -->
               <div class="post-meta">
                 <div class="post-meta-item">
-                  <router-link class="post-meta-link" :to="`/single-post.html/${item.id}`">{{ item.deptName }}</router-link>
+                  <router-link class="post-meta-link" :to="`events-single-post.html/${item.id}`">{{ item.deptName }}</router-link>
                 </div>
 
                 <div class="post-meta-item">
                   <span class="post-meta-icon int-clock novi-icon"></span>
-                  <router-link class="post-meta-link" :to="`/single-post.html/${item.id}`">
-                    {{ item.start_time }} - {{ item.end_time }}
+                  <router-link class="post-meta-link" :to="`events-single-post.html/${item.id}`">
+                  {{ formatDate(item.start_time) }} - {{ formatDate(item.end_time) }}
                   </router-link>
                 </div>
               </div>
@@ -97,11 +122,7 @@ const handlePagination = () => {
               <!-- Footer: Read more -->
               <div class="post-meta post-meta-footer">
                 <div class="post-meta-item">
-                  <router-link class="btn btn-dark btn-rect post-btn" :to="`/single-post.html/${item.id}`">Read more</router-link>
-                </div>
-                <div class="post-meta-item">
-                  <span class="post-meta-icon int-chat novi-icon"></span>
-                  {{ item.joinerNumber }} people joined
+                  <router-link class="btn btn-dark btn-rect post-btn" :to="`events-single-post.html/${item.id}`">Read more</router-link>
                 </div>
               </div>
 

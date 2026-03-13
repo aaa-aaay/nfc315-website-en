@@ -52,6 +52,11 @@ export const constantRoutes: RouteRecordRaw[] = [
         meta: { title:'Single post', hidden: true },
       },
       {
+        path: "/events-single-post.html/:id",
+        component: () => import("@/views/events-single-post/index.vue"),
+        meta: { title:'Event Single post', hidden: true },
+      },
+      {
         path: "/privacy_policy.html",
         component: () => import("@/views/privacy-policy/index.vue"),
         meta: { title:'Privacy Policy', hidden: true },

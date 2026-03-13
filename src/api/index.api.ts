@@ -41,6 +41,13 @@ const IndexAPI = {
     });
   },
 
+  eventInformation(id) {
+    return request({
+      url: `/api/api/topic/detail`,
+      method: "get",
+      params: { id }  // send the ID as query param
+    });
+  },
 };
 
 
