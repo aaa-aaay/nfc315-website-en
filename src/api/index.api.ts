@@ -5,7 +5,7 @@ const IndexAPI = {
 
   blogPage(data) {
     return request({
-      url: `/api/manager/sysarticle/page`,
+      url: `/manager/sysarticle/page`,
       method: "get",
       params:data
     });
@@ -13,19 +13,19 @@ const IndexAPI = {
 
   fetchPostDetail(id) {
     return request({
-      url: `/api/manager/sysarticle/info/${id}`,
+      url: `/manager/sysarticle/info/${id}`,
       method: "get"
     });
   },
   getPreAndNext(id) {
     return request({
-      url: `/api/manager/sysarticle/getPreAndNext?id=${id}`,
+      url: `/manager/sysarticle/getPreAndNext?id=${id}`,
       method: "get"
     });
   },
   saveMessage(data) {
     return request({
-      url: `/api/manager/syscontactmsg/save`,
+      url: `/manager/syscontactmsg/save`,
       method: "post",
       data
     });
@@ -35,7 +35,7 @@ const IndexAPI = {
 
   eventPage(data) {
     return request({
-      url: `/api/api/topic/page`,
+      url: `/api/topic/page`,
       method: "get",
       params: data
     });
@@ -43,7 +43,7 @@ const IndexAPI = {
 
   eventInformation(id) {
     return request({
-      url: `/api/api/topic/detail`,
+      url: `/api/topic/detail`,
       method: "get",
       params: { id }  // send the ID as query param
     });
