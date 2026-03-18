@@ -26,7 +26,7 @@
   <section class="section section-md bg-transparent" data-preset='{"title":"Intro","category":"intro","reload":false,"id":"intro-4"}'>
     <div class="container">
       <div class="row row-30 align-items-center justify-content-center">
-        <div class="col-xs-10 col-sm-7 d-none d-sm-block"><img src="@/assets/images/Solutions_IMG2.jpeg" alt="" width="730" height="730"/>
+        <div class="col-xs-10 col-sm-7 "><img src="@/assets/images/Solutions_IMG2.jpeg" alt="" width="730" height="730"/>
         </div>
         <div class="col-xs-10 col-sm-5">
           <h1>The Textile DPP aims to:</h1>
@@ -63,7 +63,7 @@
   <section class="section section-md bg-transparent" data-preset='{"title":"Intro","category":"intro","reload":false,"id":"intro-4"}'>
     <div class="container">
       <div class="row row-30 align-items-center justify-content-center">
-        <div class="col-xs-10 col-sm-7 d-none d-sm-block"><img src="@/assets/images/solution_IMG4.jpg" alt="" width="730" height="730"/>
+        <div class="col-xs-10 col-sm-7 "><img src="@/assets/images/solution_IMG4.jpg" alt="" width="730" height="730"/>
         </div>
         <div class="col-xs-10 col-sm-5">
           <h1>Warehouse Management System</h1>

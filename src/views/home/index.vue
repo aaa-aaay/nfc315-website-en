@@ -327,7 +327,7 @@
           <dl data-animate='{"class":"fadeInLeftBig","delay":"0.3s"}'>
             <dt class="font-weight-normal">AliExpress</dt>
             <dd class="text-contrast">Place your order here, and we will send you samples from Gemany.</dd>
-            <a href="https://shopee.sg/shop/356908725" class="btn btn-lg btn-rect btn-dark">Get Sample</a>
+            <a href="https://www.aliexpress.com/store/1105180127?sortType=bestmatch_sort" class="btn btn-lg btn-rect btn-dark">Get Sample</a>
           </dl>
         </div>
       </div>

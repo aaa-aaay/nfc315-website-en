@@ -92,6 +92,13 @@
                 <button class="navbar-button navbar-info-button mdi-dots-vertical novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
               </div>
               <div class="navbar-subpanel-item">
+                <button class="navbar-button navbar-buy-button mdi-download novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-buy-active","isolate":"[data-multi-switch]"}'></button>
+                <div class="navbar-buy">
+                  <a class="btn btn-sm btn-login navbar-action-button" target="_blank"  href="https://play.google.com/store/apps/details?id=com.aofei.wms.international">
+                    Download App</a>
+                </div>
+              </div>
+              <div class="navbar-subpanel-item">
                 <button class="navbar-button navbar-buy-button mdi-account novi-icon" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-buy-active","isolate":"[data-multi-switch]"}'></button>
                 <div class="navbar-buy">
                   <a class="btn btn-sm btn-login navbar-action-button" target="_blank"  href="https://dpp.nfc315.com/">
